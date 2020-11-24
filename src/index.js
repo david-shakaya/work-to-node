@@ -1,9 +1,33 @@
 // const validator = require('validator'); //импортируем скачанный npm Валидатор
 // const node = require('./exporImpor') //импортируем из другого файла
 // console.log(node);
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from '../node_modules/uuid/dist/esm-browser/index.js';
 
-console.log(uuidv4());
+// ------------------------------------------------------ПРОСТО ИГРАЮСЬ
+const input = document.querySelector('.text');
+const div = document.querySelector('.example-js');
+
+
+input.addEventListener('change', (e) => {
+  console.log(e.target.value);
+ 
+  createP(+e.target.value)
+
+})
+
+ function createP(amaunt) {
+   for (let i = 0; i < amaunt; i+=1) {
+     const p = document.createElement('p')
+   p.textContent = 'Это абзац'
+   p.setAttribute('id', uuidv4());
+   
+   console.log(p);
+   div.appendChild(p)
+ }
+   
+}
+// --------------------------------------------------------------------
+// console.log('id', uuidv4());
 //  Работа с  NODE.js
 // 1) открываем консоль(командная строка) и у нас появляетсься адрес:
 //    C: \Users\Давид >
