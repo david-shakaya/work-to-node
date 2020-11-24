@@ -1,8 +1,9 @@
-const validator = require('validator'); //импортируем скачанный npm Валидатор
-const node = require('./exporImpor') //импортируем из другого файла
+// const validator = require('validator'); //импортируем скачанный npm Валидатор
+// const node = require('./exporImpor') //импортируем из другого файла
 // console.log(node);
+import { v4 as uuidv4 } from 'uuid';
 
-
+console.log(uuidv4());
 //  Работа с  NODE.js
 // 1) открываем консоль(командная строка) и у нас появляетсься адрес:
 //    C: \Users\Давид >
@@ -40,19 +41,19 @@ const node = require('./exporImpor') //импортируем из другог�
   * 
   */
 
-   const validateEmail = email => {
-  return validator.isEmail(email);
-};
+//    const validateEmail = email => {
+//   return validator.isEmail(email);
+// };
 
-console.log(
-  'Is mango@mail.com a valid email?: ',
-  validateEmail('mango@mail.com'),
-);
+// console.log(
+//   'Is mango@mail.com a valid email?: ',
+//   validateEmail('mango@mail.com'),
+// );
 
-console.log(
-  'Is Mangozedog.com a valid email?: ',
-  validateEmail('Mangozedog.com'),
-);
+// console.log(
+//   'Is Mangozedog.com a valid email?: ',
+//   validateEmail('Mangozedog.com'),
+// );
 
 // 8) - Устанавливаем babel на сайте https://babeljs.io/setup#installation   выбераем CLI
     //  и устанавливаем
