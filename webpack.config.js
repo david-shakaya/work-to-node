@@ -9,8 +9,8 @@ module.exports = {
    module: {  // Модуль для того что бы коректно работал бабиль вместе с вебпаком(также можно добавлять и для html и тд.)
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
+        test: /\.m?js$/,    //Регулярное выражение которое изет js. файлы
+        exclude: /node_modules/,  // означает обрабатывай все кроме этой папки
         use: {
           loader: "babel-loader",
         }
