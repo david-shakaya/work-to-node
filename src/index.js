@@ -188,4 +188,13 @@ add(2, 3)
 //         test: /\.scss$/i,
 //         use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], 
 //       }
-// 5) npm run dev
+// 5) Что бы изменить имя файла со стилями которые генерятья добавляем в плагины вебпака строку:
+// { filename:"style.css"}
+//  Все вместе выглядит так:    plugins: [new MiniCssExtractPlugin({ filename:"style.css"})]
+// 6) npm run dev
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+                                                  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                    // Добавляем в сборку HTML с помощью вебпака
