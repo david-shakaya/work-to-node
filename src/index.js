@@ -2,6 +2,7 @@
 // const node = require('./exporImpor') //импортируем из другого файла
 // console.log(node);
 
+import './css/styles.scss';
 
 // --------------------------------------------------------------------
 // console.log('id', uuidv4());
@@ -75,6 +76,10 @@
 
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> WEBPACK <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  // САЙТЫ ИНСТРУКЦИИ ПО НАСТРОЙКЕ 
+  // -  https://tproger.ru/translations/configure-webpack4/
+  //  - https://webpack.js.org/loaders/css-loader/
+
 
   // 1) Перед работой Cоздаем packege.json - если он уже создан пропускаем этот шаг.
     // >  npm init
@@ -137,4 +142,50 @@ const add = (a, b) => a + b;
 add(2, 3)
 
 
-//  Остановился на 30 минуте.
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+                                                  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                    // Добавляем в сборку CSS с помощью вебпака
+// 1) Что бы вебпак увидел CSS добавляем импорт файла в index.js:  import './css/styles.css'
+// 2) Устанавливаем загрузчики вебпака для CSS, пишем в терминале:
+      // npm install style-loader css-loader --save-dev
+
+  // 3) Добавляем в webpack.config.js правила для использования 
+
+      // {
+      //   test: /\.css$/i,
+      //   use: ["style-loader", "css-loader"],
+      // }
+
+  // 4)Что бы css был отделным файлом. Устанавлиаем след.плагин
+  // npm install --save-dev mini-css-extract-plugin
+
+  // 5)  Добавляем в webpack.config.js переменную.
+  // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+  // 6) В webpack.config.js добаввляем правило. Ставим между style-loader и css-loader
+  // MiniCssExtractPlugin.loader
+// 7) В webpack.config.js добаввляем вызов класа или чтото типа того:
+// plugins: [new MiniCssExtractPlugin()]
+
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+                                                  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                                    // Добавляем в сборку SCSS с помощью вебпака
+// 1) Устанавливаем пакеты (node - sass устаревает скори придеться делать по другому)
+// npm install sass - loader node - sass
+
+// 2) Ненужный шаг если изначально в стилях стоит scss а не css как сейчас у нас. Переименовуем css в scss
+
+// 3)Добавляем импорт в index.js c нашими scss стилями
+// import './css/styles.scss';
+// 4) Добавляем праила для scss: 
+//    {
+//         test: /\.scss$/i,
+//         use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], 
+//       }
+// 5) npm run dev
